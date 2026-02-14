@@ -1,0 +1,5 @@
+include:
+  - path: ./proxy/docker-compose.yml
+  - path: ./homepage/docker-compose.yml
+
+services: {}

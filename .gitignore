@@ -1,0 +1,15 @@
+# --- Services ---
+proxy/acme.json
+homepage/config/logs/
+*.log
+
+# --- OS / IDE specific ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Secrets ---
+.env
+.env.local
+.env.*.local
