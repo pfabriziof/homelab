@@ -1,6 +1,6 @@
 services:
   traefik:
-    image: traefik:latest
+    image: traefik:3.6.8
     command:
       # Api and Providers
       - "--api.dashboard=true"
