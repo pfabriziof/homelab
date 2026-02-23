@@ -1,6 +1,7 @@
 # --- Services ---
 proxy/acme.json
 homepage/config/logs/
+tailscale/tailscale-data/
 *.log
 
 # --- OS / IDE specific ---
