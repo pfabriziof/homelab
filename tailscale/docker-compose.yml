@@ -1,0 +1,21 @@
+services:
+  tailscale:
+    image: tailscale/tailscale:latest
+    container_name: tailscale
+    hostname: homelab-server
+    environment:
+      - TS_AUTHKEY=${TS_AUTHKEY}
+      - TS_STATE_DIR=/var/lib/tailscale
+      # - TS_ROUTES=192.168.1.0/24 # Only for future local NAS
+    volumes:
+      - /dev/net/tun:/dev/net/tun
+      - ./tailscale-data:/var/lib/tailscale
+    cap_add:
+      - net_admin
+      - sys_module
+    restart: unless-stopped
+    networks:
+      - proxy-tier
+networks:
+  proxy-tier:
+    external: true
