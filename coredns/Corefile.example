@@ -1,0 +1,12 @@
+YOUR_HOMELAB_SUBDOMAIN {
+    template IN A {
+        answer "{{ .Name }} 60 IN A YOUR_HOMELAB_IP"
+    }
+    log
+}
+
+. {
+    forward . 1.1.1.1 8.8.8.8
+    cache
+    log
+}

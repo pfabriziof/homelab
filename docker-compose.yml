@@ -2,5 +2,6 @@ include:
   - path: ./tailscale/docker-compose.yml
   - path: ./proxy/docker-compose.yml
   - path: ./homepage/docker-compose.yml
+  - path: ./coredns/docker-compose.yaml
 
 services: {}
