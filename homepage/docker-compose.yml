@@ -14,7 +14,9 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.homepage.rule=Host(`${HOMELAB_DOMAIN}`)"
       - "traefik.http.routers.homepage.entrypoints=websecure"
-      - "traefik.http.routers.homepage.tls.certresolver=myresolver"
+      - "traefik.http.routers.homepage.tls=true"
+      - "traefik.http.services.homepage.loadbalancer.server.port=3000"
+      # - "traefik.http.routers.homepage.tls.certresolver=myresolver"
     networks:
       - proxy-tier
 networks:
