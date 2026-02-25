@@ -9,10 +9,10 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro # (optional) For docker integrations
       - ./images:/app/public/images
     environment:
-      HOMEPAGE_ALLOWED_HOSTS: homelab.thepots.net
+      HOMEPAGE_ALLOWED_HOSTS: homepage.${MAIN_DOMAIN}
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.homepage.rule=Host(`${HOMELAB_DOMAIN}`)"
+      - "traefik.http.routers.homepage.rule=Host(`homepage.${MAIN_DOMAIN}`)"
       - "traefik.http.routers.homepage.entrypoints=websecure"
       - "traefik.http.routers.homepage.tls=true"
       - "traefik.http.services.homepage.loadbalancer.server.port=3000"

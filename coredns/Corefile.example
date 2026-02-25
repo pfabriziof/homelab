@@ -1,4 +1,4 @@
-YOUR_HOMELAB_SUBDOMAIN {
+YOUR_MAIN_DOMAIN {
     template IN A {
         answer "{{ .Name }} 60 IN A YOUR_HOMELAB_IP"
     }

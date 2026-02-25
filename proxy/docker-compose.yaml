@@ -28,7 +28,7 @@ services:
       # - ./acme.json:/letsencrypt/acm.json
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.traefik.rule=Host(`${TRAEFIK_DOMAIN}`)"
+      - "traefik.http.routers.traefik.rule=Host(`traefik.${MAIN_DOMAIN}`)"
       - "traefik.http.routers.traefik.entrypoints=websecure"
       - "traefik.http.routers.traefik.tls=true"
       - "traefik.http.routers.traefik.service=api@internal"
@@ -41,7 +41,7 @@ services:
     container_name: traefik-whoami
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.whoami.rule=Host(`${TEST_DOMAIN}`)"
+      - "traefik.http.routers.whoami.rule=Host(`whoami.${MAIN_DOMAIN}`)"
       - "traefik.http.routers.whoami.entrypoints=websecure"
       - "traefik.http.routers.whoami.tls=true"
       - "traefik.http.services.whoami.loadbalancer.server.port=80"

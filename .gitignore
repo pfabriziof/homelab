@@ -2,6 +2,7 @@
 proxy/acme.json
 homepage/config/logs/
 tailscale/tailscale-data/
+stirling-pdf/stirling-data/
 *.log
 
 # --- OS / IDE specific ---
