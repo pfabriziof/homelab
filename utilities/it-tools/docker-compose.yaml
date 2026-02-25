@@ -1,16 +1,14 @@
 services:
-  stirling-pdf:
+  it-tools:
     image: corentinth/it-tools:latest
     container_name: it-tools
-    ports:
-      - '8080:80'
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.it-tools.rule=Host(`it-tools.${MAIN_DOMAIN}`)"
       - "traefik.http.routers.it-tools.entrypoints=websecure"
       - "traefik.http.routers.it-tools.tls=true"
-      - "traefik.http.services.it-tools.loadbalancer.server.port=8080"
+      - "traefik.http.services.it-tools.loadbalancer.server.port=80"
     networks:
       - proxy-tier
 networks:
