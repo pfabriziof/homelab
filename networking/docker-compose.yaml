@@ -1,0 +1,6 @@
+include:
+  - path: ./tailscale/docker-compose.yaml
+  - path: ./proxy/docker-compose.yaml
+  - path: ./coredns/docker-compose.yaml
+
+services: {}

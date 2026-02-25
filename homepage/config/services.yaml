@@ -18,15 +18,18 @@
     - Immich:
         icon: immich.svg
         href: http://localhost/
-    - Linkding:
-        icon: linkding.svg
-        href: http://localhost/
     - File Browser:
         icon: filebrowser.svg
         href: http://localhost/
     - Stirling-PDF:
         icon: stirling-pdf.svg
         href: https://stirling-pdf.thepots.net/
+    - IT-Tools:
+        icon: it-tools.svg
+        href: https://it-tools.thepots.net/
+    - Linkding:
+        icon: linkding.svg
+        href: http://localhost/
 - Media:
     - Navidrome:
         icon: navidrome.svg

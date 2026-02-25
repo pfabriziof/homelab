@@ -1,8 +1,9 @@
 # --- Services ---
-proxy/acme.json
+networking/tailscale/tailscale-data/
+networking/traefik/acme.json
+networking/coredns/Corefile
 homepage/config/logs/
-tailscale/tailscale-data/
-stirling-pdf/stirling-data/
+utilities/stirling-pdf/stirling-data/
 *.log
 
 # --- OS / IDE specific ---
@@ -15,4 +16,3 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
-Corefile

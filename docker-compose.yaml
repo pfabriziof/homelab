@@ -1,8 +1,6 @@
 include:
-  - path: ./tailscale/docker-compose.yaml
-  - path: ./proxy/docker-compose.yaml
+  - path: ./networking/docker-compose.yaml
   - path: ./homepage/docker-compose.yaml
-  - path: ./coredns/docker-compose.yaml
-  - path: ./stirling-pdf/docker-compose.yaml
+  - path: ./utilities/docker-compose.yaml
 
 services: {}
