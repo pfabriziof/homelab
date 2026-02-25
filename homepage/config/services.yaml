@@ -1,7 +1,58 @@
-- Group A:
-    - Service A:
+- Admin:
+    - Tailscale:
+        icon: tailscale.svg
+        href: https://login.tailscale.com/admin/machines
+    - Traefik:
+        icon: traefik-proxy.svg
+        href: https://traefik.thepots.net/
+    - Komodo:
+        icon: komodo.svg
+        href: https://localhost/
+    - Dozzle:
+        icon: dozzle.svg
+        href: https://localhost/
+    - Pi-hole:
+        icon: pi-hole.svg
         href: http://localhost/
-
-- Group B:
-    - Service B:
+- Utilities:
+    - Immich:
+        icon: immich.svg
+        href: http://localhost/
+    - Linkding:
+        icon: linkding.svg
+        href: http://localhost/
+    - File Browser:
+        icon: filebrowser.svg
+        href: http://localhost/
+    - Stirling-PDF:
+        icon: stirling-pdf.svg
+        href: https://stirling-pdf.thepots.net/
+- Media:
+    - Navidrome:
+        icon: navidrome.svg
+        href: http://localhost/
+    - Jellyfin:
+        icon: jellyfin.svg
+        href: http://localhost/
+    - Calibre:
+        icon: calibre.svg
+        href: http://localhost/
+    - Calibre-Web:
+        icon: calibre-web.svg
+        href: http://localhost/
+- Download Media:
+    - Prowlarr:
+        icon: prowlarr.svg
+        href: http://localhost/
+    - Lidarr:
+        icon: lidarr.svg
+        href: http://localhost/
+    - Radarr:
+        icon: radarr.svg
+        href: http://localhost/
+    - Sonarr:
+        icon: sonarr.svg
+        href: http://localhost/
+    - MeTube:
+        icon: metube.svg
         href: http://localhost/
