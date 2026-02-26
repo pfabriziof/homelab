@@ -1,6 +1,6 @@
 # --- Services ---
 networking/tailscale/tailscale-data/
-networking/traefik/acme.json
+networking/traefik/letsencrypt/acme.json
 networking/coredns/Corefile
 homepage/config/logs/
 utilities/stirling-pdf/stirling-data/

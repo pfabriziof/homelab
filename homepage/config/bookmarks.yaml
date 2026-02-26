@@ -5,14 +5,20 @@
 - Developer:
     - Github:
         - abbr: GH
-          href: https://github.com/
+          href: https://github.com/pfabriziof
+          icon: github.svg
+    - Gists:
+        - href: https://gist.github.com/pfabriziof
+          icon: github.svg
 
 - Social:
     - Reddit:
         - abbr: RE
           href: https://reddit.com/
+          icon: reddit.svg
 
 - Entertainment:
     - YouTube:
         - abbr: YT
           href: https://youtube.com/
+          icon: youtube.svg

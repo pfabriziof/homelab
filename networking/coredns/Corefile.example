@@ -1,7 +1,8 @@
 YOUR_MAIN_DOMAIN {
     template IN A {
-        answer "{{ .Name }} 60 IN A YOUR_HOMELAB_IP"
+        answer "{{ .Name }} 60 IN A YOUR_HOMELAB_TRAEFIK_IP"
     }
+    forward . 1.1.1.1 8.8.8.8 # for queries that don't match A (e.g. SOA, TXT, NS)
     log
 }
 

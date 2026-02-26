@@ -2,8 +2,6 @@ services:
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
     container_name: homepage
-    # ports:
-    #   - 3000:3000
     volumes:
       - ./config:/app/config # Make sure your local config directory exists
       - /var/run/docker.sock:/var/run/docker.sock:ro
@@ -14,9 +12,8 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.homepage.rule=Host(`homepage.${MAIN_DOMAIN}`)"
       - "traefik.http.routers.homepage.entrypoints=websecure"
-      - "traefik.http.routers.homepage.tls=true"
+      - "traefik.http.routers.homepage.tls.certresolver=mydnschallenge"
       - "traefik.http.services.homepage.loadbalancer.server.port=3000"
-      # - "traefik.http.routers.homepage.tls.certresolver=myresolver"
     networks:
       - proxy-tier
 networks:
