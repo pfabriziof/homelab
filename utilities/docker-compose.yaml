@@ -1,5 +1,0 @@
-include:
-  - path: ./it-tools/docker-compose.yaml
-  - path: ./stirling-pdf/docker-compose.yaml
-
-services: {}

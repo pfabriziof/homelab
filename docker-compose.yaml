@@ -1,6 +1,0 @@
-include:
-  - path: ./networking/docker-compose.yaml
-  - path: ./homepage/docker-compose.yaml
-  - path: ./utilities/docker-compose.yaml
-
-services: {}

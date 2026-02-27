@@ -2,8 +2,8 @@ services:
   stirling-pdf:
     image: stirlingtools/stirling-pdf:latest
     container_name: stirling-pdf
-    volumes:
-      - ./stirling-data:/configs
+    restart: unless-stopped
+    env_file: ../../.env
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
@@ -11,6 +11,8 @@ services:
       - "traefik.http.routers.stirling-pdf.entrypoints=websecure"
       - "traefik.http.routers.stirling-pdf.tls.certresolver=mydnschallenge"
       - "traefik.http.services.stirling-pdf.loadbalancer.server.port=8080"
+    volumes:
+      - ./stirling-data:/configs
     networks:
       - proxy-tier
 networks:
