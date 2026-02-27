@@ -4,7 +4,6 @@ services:
     container_name: stirling-pdf
     restart: unless-stopped
     env_file: ../../.env
-    restart: unless-stopped
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.stirling-pdf.rule=Host(`stirling-pdf.${MAIN_DOMAIN}`)"

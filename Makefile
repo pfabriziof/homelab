@@ -1,3 +1,6 @@
+# Default variables
+ENV_FILE := --env-file .env
+
 .PHONY: help
 help: ## Show help for each of the Makefile recipes.
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
@@ -5,15 +8,15 @@ help: ## Show help for each of the Makefile recipes.
 
 .PHONY: networking
 networking: ## Networking: Usage 'make networking ARGS="up -d"' or 'make networking ARGS="down"'
-	docker compose -f ./networking/docker-compose.yaml ${ARGS}
+	docker compose $(ENV_FILE) -f ./networking/docker-compose.yaml ${ARGS}
 
 .PHONY: monitoring
 monitoring: ## Monitoring: Usage 'make monitoring ARGS="up -d"' or 'make monitoring ARGS="down"'
-	docker compose -f ./monitorization/docker-compose.yaml ${ARGS}
+	docker compose $(ENV_FILE) -f ./monitoring/docker-compose.yaml ${ARGS}
 
 .PHONY: homepage
 homepage: ## Homepage: Usage 'make homepage ARGS="up -d"' or 'make homepage ARGS="down"'
-	docker compose -f ./homepage/docker-compose.yaml ${ARGS}
+	docker compose $(ENV_FILE) -f ./homepage/docker-compose.yaml ${ARGS}
 
 .PHONY: all-up
 all-up: ## Start every service in the project

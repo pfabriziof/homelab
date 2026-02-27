@@ -1,9 +1,10 @@
+name: homepage
 services:
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
     container_name: homepage
     restart: unless-stopped
-    env_file: ../.env
+    env_file: "../.env"
     environment:
       HOMEPAGE_ALLOWED_HOSTS: homepage.${MAIN_DOMAIN}
     labels:

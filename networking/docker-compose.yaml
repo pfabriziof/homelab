@@ -1,3 +1,4 @@
+name: networking
 include:
   - path: ./tailscale/docker-compose.yaml
   - path: ./traefik/docker-compose.yaml
