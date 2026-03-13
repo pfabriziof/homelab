@@ -4,7 +4,6 @@ services:
     container_name: tailscale
     hostname: homelab-server
     restart: unless-stopped
-    env_file: ../../.env
     environment:
       - TS_AUTHKEY=${TS_AUTHKEY}
       - TS_STATE_DIR=/var/lib/tailscale

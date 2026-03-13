@@ -1,0 +1,16 @@
+title = "Komodo - The Pots"
+host="https://komodo.thepots.net"
+
+# AUTH / LOGIN
+local_auth = true
+init_admin_username = "admin"
+init_admin_password = "changeme"
+disable_user_registration = true
+enable_new_users = true
+disable_non_admin_create = false
+jwt_ttl = "1-day"
+
+[github_oauth]
+enabled = false
+id = ""
+secret = ""

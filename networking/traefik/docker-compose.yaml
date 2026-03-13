@@ -5,7 +5,6 @@ services:
     depends_on: [tailscale]
     network_mode: "service:tailscale" # Traefik "lives" inside Tailscale
     restart: unless-stopped
-    env_file: ../../.env
     command:
       - "--api.dashboard=true"
       - "--api.insecure=false"
@@ -44,7 +43,6 @@ services:
     image: traefik/whoami
     container_name: traefik-whoami
     restart: unless-stopped
-    env_file: ../../.env
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.whoami.rule=Host(`whoami.${MAIN_DOMAIN}`)"

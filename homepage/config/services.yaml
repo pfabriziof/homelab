@@ -14,22 +14,6 @@
     - Pi-hole:
         icon: pi-hole.svg
         href: http://localhost/
-- Utilities:
-    - Immich:
-        icon: immich.svg
-        href: http://localhost/
-    - File Browser:
-        icon: filebrowser.svg
-        href: http://localhost/
-    - Stirling-PDF:
-        icon: stirling-pdf.svg
-        href: https://stirling-pdf.thepots.net/
-    - IT-Tools:
-        icon: it-tools.svg
-        href: https://it-tools.thepots.net/
-    - Linkding:
-        icon: linkding.svg
-        href: http://localhost/
 - Media:
     - Navidrome:
         icon: navidrome.svg
@@ -56,6 +40,23 @@
     - Sonarr:
         icon: sonarr.svg
         href: http://localhost/
+- Utilities:
+    - Linkding:
+        icon: linkding.svg
+        href: http://localhost/
+    - IT-Tools:
+        icon: it-tools.svg
+        href: https://it-tools.thepots.net/
     - MeTube:
         icon: metube.svg
+        href: http://metube.thepots.net/
+    - Stirling-PDF:
+        icon: stirling-pdf.svg
+        href: https://stirling-pdf.thepots.net/
+- Files and storage:
+    - Immich:
+        icon: immich.svg
+        href: http://localhost/
+    - File Browser:
+        icon: filebrowser.svg
         href: http://localhost/

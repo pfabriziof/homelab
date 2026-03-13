@@ -12,6 +12,14 @@
           icon: github.svg
 
 - Social:
+    - X:
+        - abbr: X
+          href: https://x.com/
+          icon: x.svg
+    - Pinterest:
+        - abbr: PI
+          href: https://www.pinterest.com/
+          icon: pinterest.svg
     - Reddit:
         - abbr: RE
           href: https://reddit.com/
@@ -22,3 +30,7 @@
         - abbr: YT
           href: https://youtube.com/
           icon: youtube.svg
+    - YouTube:
+        - abbr: YT-M
+          href: https://music.youtube.com/
+          icon: youtube-music.svg
