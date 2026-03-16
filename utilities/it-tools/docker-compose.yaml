@@ -3,7 +3,6 @@ services:
     image: corentinth/it-tools:latest
     container_name: it-tools
     restart: unless-stopped
-    env_file: ../../.env
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.it-tools.rule=Host(`it-tools.${MAIN_DOMAIN}`)"

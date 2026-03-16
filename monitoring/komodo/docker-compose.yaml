@@ -67,6 +67,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /proc:/proc
       - ${PERIPHERY_ROOT_DIRECTORY:-/etc/komodo}:${PERIPHERY_ROOT_DIRECTORY:-/etc/komodo}
+      # - /home/ubuntu/homelab:/root/homelab
     networks:
       - proxy-tier
 

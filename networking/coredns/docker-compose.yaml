@@ -6,5 +6,7 @@ services:
     command: -conf /etc/coredns/Corefile
     depends_on: [tailscale]
     network_mode: "service:tailscale"
+    labels:
+      - "komodo.skip=true"
     volumes:
       - ./Corefile:/etc/coredns/Corefile:ro
