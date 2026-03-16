@@ -4,6 +4,7 @@ networking/traefik/letsencrypt/acme.json
 networking/coredns/Corefile
 homepage/config/logs/
 utilities/stirling-pdf/stirling-data/
+utilities/metube/downloads/
 *.log
 monitoring/komodo/config/core.config.toml
 

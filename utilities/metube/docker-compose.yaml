@@ -4,6 +4,7 @@ services:
     container_name: metube
     restart: unless-stopped
     environment:
+      HOST: 0.0.0.0
       DELETE_FILE_ON_TRASHCAN: true
     labels:
       - "traefik.enable=true"
@@ -12,4 +13,9 @@ services:
       - "traefik.http.routers.metube.tls.certresolver=mydnschallenge"
       - "traefik.http.services.metube.loadbalancer.server.port=8081"
     volumes:
-      - /path/to/downloads:/downloads
+      - ./downloads:/downloads
+    networks:
+      - proxy-tier
+networks:
+  proxy-tier:
+    external: true
