@@ -1,6 +1,8 @@
 ---
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/bookmarks
+# For exploring the available icons, please see:
+# https://dashboardicons.com
 
 - Developer:
     - Github:
@@ -34,3 +36,20 @@
         - abbr: YT-M
           href: https://music.youtube.com/
           icon: youtube-music.svg
+- Books:
+  - LibGen.li:
+    - abbr: LG
+      href: https://libgen.li
+      icon: bookstack.svg
+  - LibGen.la:
+    - abbr: LG
+      href: https://libgen.la
+      icon: bookstack.svg
+  - LibGen.bz:
+    - abbr: LG
+      href: https://libgen.bz
+      icon: bookstack.svg
+  - LibGen.gl:
+    - abbr: LG
+      href: https://libgen.gl
+      icon: bookstack.svg
