@@ -26,7 +26,7 @@
         href: http://localhost/
     - Calibre-Web:
         icon: calibre-web.svg
-        href: http://localhost/
+        href: http://calibre.thepots.net/
 - Download Media:
     - Prowlarr:
         icon: prowlarr.svg
