@@ -18,7 +18,7 @@ services:
       - "traefik.http.routers.calibre.rule=Host(`calibre.${MAIN_DOMAIN}`)"
       - "traefik.http.routers.calibre.entrypoints=websecure"
       - "traefik.http.routers.calibre.tls.certresolver=mydnschallenge"
-      - "traefik.http.services.calibre.loadbalancer.server.port=80"
+      - "traefik.http.services.calibre.loadbalancer.server.port=8083"
     restart: unless-stopped
     networks:
       - proxy-tier
