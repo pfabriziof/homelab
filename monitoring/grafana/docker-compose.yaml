@@ -17,6 +17,6 @@ services:
       - "traefik.http.routers.grafana.tls.certresolver=mydnschallenge"
       - "traefik.http.services.grafana.loadbalancer.server.port=3000"
     networks:
-      proxy-tier
+      - proxy-tier
 
 
