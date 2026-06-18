@@ -6,7 +6,7 @@ services:
   node_exporter:
     pid: host
     container_name: node_exporter
-    image: prom/node_exporter:latest
+    image: quay.io/prometheus/node-exporter:latest
     restart: unless-stopped
     volumes:
       - /proc:/host/proc:ro
