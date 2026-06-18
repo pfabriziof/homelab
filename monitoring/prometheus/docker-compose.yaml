@@ -3,10 +3,10 @@ networks:
     external: true
 
 services:
-  node_exporter:
+  node-exporter:
     pid: host
-    container_name: node_exporter
-    image: quay.io/prometheus/node-exporter:latest
+    container_name: node-exporter
+    image: prom/node-exporter:latest
     restart: unless-stopped
     volumes:
       - /proc:/host/proc:ro
@@ -19,15 +19,15 @@ services:
       - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.node_exporter.rule=Host(`node-exporter.${MAIN_DOMAIN}`)"
-      - "traefik.http.routers.node_exporter.entrypoints=websecure"
-      - "traefik.http.routers.node_exporter.tls.certresolver=mydnschallenge"
-      - "traefik.http.services.node_exporter.loadbalancer.server.port=9100"
+      - "traefik.http.routers.node-exporter.rule=Host(`node-exporter.${MAIN_DOMAIN}`)"
+      - "traefik.http.routers.node-exporter.entrypoints=websecure"
+      - "traefik.http.routers.node-exporter.tls.certresolver=mydnschallenge"
+      - "traefik.http.services.node-exporter.loadbalancer.server.port=9100"
     networks:
       - proxy-tier
 
   cadvisor:
-    image: grc.io/cadvisor/cadvisor:latest
+    image: gcr.io/cadvisor/cadvisor:latest
     container_name: cadvisor
     restart: unless-stopped
     volumes:
