@@ -1,13 +1,17 @@
 services:
   traefik:
-    image: traefik:v3.6.8
+    image: traefik:v3.7.5
     container_name: traefik
     depends_on: [tailscale]
     network_mode: "service:tailscale" # Traefik "lives" inside Tailscale
     restart: unless-stopped
     command:
+      - "--api=true"
       - "--api.dashboard=true"
       - "--api.insecure=false"
+      - "--pilot.dashboard=false"
+      - "--global.sendAnonymousUsage=false"
+      - "--global.checkNewVersion=true"
       - "--providers.docker=true"
       - "--providers.docker.exposedByDefault=false"
       # Entrypoints
