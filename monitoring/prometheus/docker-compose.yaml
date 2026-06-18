@@ -49,6 +49,7 @@ services:
     image: prom/prometheus:latest
     container_name: prometheus
     restart: unless-stopped
+    user: "0" # root user
     environment:
       - PUID=0
       - PGID=0
