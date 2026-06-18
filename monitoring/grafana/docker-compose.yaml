@@ -1,0 +1,22 @@
+networks:
+  proxy-tier:
+    external: true
+services:
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    user: "0" # root user
+    restart: unless-stopped
+    volumes:
+      - ./grafana-data:/var/lib/grafana
+      - ./grafana-data/provisioning/datasources:/etc/grafana/provisioning/datasources
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.grafana.rule=Host(`grafana.${MAIN_DOMAIN}`)"
+      - "traefik.http.routers.grafana.entrypoints=websecure"
+      - "traefik.http.routers.grafana.tls.certresolver=mydnschallenge"
+      - "traefik.http.services.grafana.loadbalancer.server.port=3000"
+    networks:
+      proxy-tier
+
+

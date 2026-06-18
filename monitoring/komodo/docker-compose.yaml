@@ -1,3 +1,6 @@
+networks:
+  proxy-tier:
+    external: true
 services:
   postgres:
     image: ghcr.io/ferretdb/postgres-documentdb:${FERRETDB_POSTGRESQL_IMAGE_TAG}
@@ -75,6 +78,3 @@ volumes:
   postgres-data:
   ferretdb-state:
 
-networks:
-  proxy-tier:
-    external: true

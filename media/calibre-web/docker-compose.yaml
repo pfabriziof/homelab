@@ -1,3 +1,6 @@
+networks:
+  proxy-tier:
+    external: true
 services:
   calibre-web:
     image: lscr.io/linuxserver/calibre-web:latest
@@ -22,6 +25,3 @@ services:
     restart: unless-stopped
     networks:
       - proxy-tier
-networks:
-  proxy-tier:
-    external: true

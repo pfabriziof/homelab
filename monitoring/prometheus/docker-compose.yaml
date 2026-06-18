@@ -1,0 +1,72 @@
+networks:
+  proxy-tier:
+    external: true
+
+services:
+  node_exporter:
+    pid: host
+    container_name: node_exporter
+    image: prom/node_exporter:latest
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.node_exporter.rule=Host(`node-exporter.${MAIN_DOMAIN}`)"
+      - "traefik.http.routers.node_exporter.entrypoints=websecure"
+      - "traefik.http.routers.node_exporter.tls.certresolver=mydnschallenge"
+      - "traefik.http.services.node_exporter.loadbalancer.server.port=9100"
+    networks:
+      - proxy-tier
+
+  cadvisor:
+    image: grc.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    restart: unless-stopped
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.cadvisor.rule=Host(`cadvisor.${MAIN_DOMAIN}`)"
+      - "traefik.http.routers.cadvisor.entrypoints=websecure"
+      - "traefik.http.routers.cadvisor.tls.certresolver=mydnschallenge"
+      - "traefik.http.services.cadvisor.loadbalancer.server.port=8080"
+    networks:
+      - proxy-tier
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: unless-stopped
+    environment:
+      - PUID=0
+      - PGID=0
+    volumes:
+      - ./prometheus.yaml:/etc/prometheus/prometheus.yaml
+      - ./prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yaml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.prometheus.rule=Host(`prometheus.${MAIN_DOMAIN}`)"
+      - "traefik.http.routers.prometheus.entrypoints=websecure"
+      - "traefik.http.routers.prometheus.tls.certresolver=mydnschallenge"
+      - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
+    networks:
+      - proxy-tier
+

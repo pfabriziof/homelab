@@ -1,18 +1,18 @@
+networks:
+  proxy-tier:
+    external: true
 services:
   stirling-pdf:
     image: stirlingtools/stirling-pdf:latest
     container_name: stirling-pdf
     restart: unless-stopped
+    volumes:
+      - ./stirling-data:/configs
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.stirling-pdf.rule=Host(`stirling-pdf.${MAIN_DOMAIN}`)"
       - "traefik.http.routers.stirling-pdf.entrypoints=websecure"
       - "traefik.http.routers.stirling-pdf.tls.certresolver=mydnschallenge"
       - "traefik.http.services.stirling-pdf.loadbalancer.server.port=8080"
-    volumes:
-      - ./stirling-data:/configs
     networks:
       - proxy-tier
-networks:
-  proxy-tier:
-    external: true

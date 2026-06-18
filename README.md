@@ -118,3 +118,8 @@ Once running, services are available at (replace `yourdomain` with `MAIN_DOMAIN`
 | `https://stirling-pdf.yourdomain` | Stirling PDF |
 
 > All URLs are only reachable from within the Tailnet.
+
+# Work to Do
+1. Add and configure **Authelia** for all the services.
+2. Add an configure **Infiscal** to render sensitive configuration files.
+3. Add **Grafana**, **Prometheus**, **CAdvisor** in the monitoring section.

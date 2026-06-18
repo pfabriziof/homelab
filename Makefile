@@ -15,11 +15,11 @@ monitoring: ## Monitoring: Usage 'make monitoring ARGS="up -d"' or 'make monitor
 	docker compose --env-file ./monitoring/.env -f ./monitoring/docker-compose.yaml ${ARGS}
 
 .PHONY: all-up
-all-up: ## Start every service in the project
+all-up: ## Start both networking and monitoring services
 	make networking ARGS="up -d"
 	make monitoring ARGS="up -d"
 
 .PHONY: all-down
-all-down: ## Stop every service in the project
+all-down: ## Stop both networking and monitoring services
 	make networking ARGS="down"
 	make monitoring ARGS="down"
