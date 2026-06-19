@@ -14,6 +14,13 @@
     - Pi-hole:
         icon: pi-hole.svg
         href: http://localhost/
+- Monitoring:
+    - Grafana:
+        icon: grafana.svg
+        href: https://grafana.thepots.net/
+    - Prometheus:
+        icon: prometheus.svg
+        href: https://prometheus.thepots.net/
 - Media:
     - Navidrome:
         icon: navidrome.svg
