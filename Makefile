@@ -10,16 +10,16 @@ help: ## Show help for each of the Makefile recipes.
 networking: ## Networking: Usage 'make networking ARGS="up -d"' or 'make networking ARGS="down"'
 	docker compose --env-file ./networking/.env -f ./networking/docker-compose.yaml ${ARGS}
 
-.PHONY: monitoring
-monitoring: ## Monitoring: Usage 'make monitoring ARGS="up -d"' or 'make monitoring ARGS="down"'
-	docker compose --env-file ./monitoring/.env -f ./monitoring/docker-compose.yaml ${ARGS}
+.PHONY: ci_cd
+ci_cd: ## CI/CD: Usage 'make monitoring ARGS="up -d"' or 'make monitoring ARGS="down"'
+	docker compose --env-file ./ci_cd/.env -f ./ci_cd/docker-compose.yaml ${ARGS}
 
 .PHONY: all-up
 all-up: ## Start both networking and monitoring services
 	make networking ARGS="up -d"
-	make monitoring ARGS="up -d"
+	make ci_cd ARGS="up -d"
 
 .PHONY: all-down
 all-down: ## Stop both networking and monitoring services
 	make networking ARGS="down"
-	make monitoring ARGS="down"
+	make ci_cd ARGS="down"
