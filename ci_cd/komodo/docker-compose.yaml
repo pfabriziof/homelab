@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   postgres:
-    image: ghcr.io/ferretdb/postgres-documentdb:${FERRETDB_POSTGRESQL_IMAGE_TAG}
+    image: ghcr.io/ferretdb/postgres-documentdb:17-0.107.0-ferretdb-2.7.0
     container_name: komodo-postgres
     labels:
       komodo.skip:
@@ -18,7 +18,7 @@ services:
       - proxy-tier
 
   ferretdb:
-    image: ghcr.io/ferretdb/ferretdb:${FERRETDB_IMAGE_TAG}
+    image: ghcr.io/ferretdb/ferretdb:2.7.0
     container_name: komodo-ferretdb
     labels:
       komodo.skip:
@@ -33,7 +33,7 @@ services:
       - proxy-tier
 
   core:
-    image: ghcr.io/moghtech/komodo-core:${COMPOSE_KOMODO_IMAGE_TAG:-latest}
+    image: ghcr.io/moghtech/komodo-core:latest
     container_name: komodo-core
     restart: unless-stopped
     depends_on:
@@ -53,14 +53,14 @@ services:
       - "traefik.http.routers.komodo.tls.certresolver=mydnschallenge"
       - "traefik.http.services.komodo.loadbalancer.server.port=9120"
     volumes:
-      - ${COMPOSE_COMODO_BACKUPS_PATH:-/etc/komodo/backups}:/backups
+      - ${COMPOSE_KOMODO_BACKUPS_PATH:-/etc/komodo/backups}:/backups
       - ./config/core.config.toml:/config/config.toml
       - /etc/komodo/keys:/config/keys
     networks:
       - proxy-tier
 
   periphery:
-    image: ghcr.io/moghtech/komodo-periphery:${COMPOSE_KOMODO_IMAGE_TAG:-latest}
+    image: ghcr.io/moghtech/komodo-periphery:latest
     container_name: komodo-periphery
     restart: unless-stopped
     environment:
