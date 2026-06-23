@@ -120,6 +120,7 @@ Once running, services are available at (replace `yourdomain` with `MAIN_DOMAIN`
 > All URLs are only reachable from within the Tailnet.
 
 # Work to Do
-1. Add and configure **Authelia** for all the services.
+1. Remove deprecated `PERIPHERY_PASSKEYS` and `KOMODO_PASSKEY` environment variables.
 2. Add an configure **Infiscal** to render sensitive configuration files.
-3. Add **Grafana**, **Prometheus**, **CAdvisor** in the monitoring section.
+3. Add and configure **Authelia** for all the services.
+4. Add **Grafana**, **Prometheus**, **CAdvisor** in the monitoring section.
