@@ -52,7 +52,7 @@ services:
       - "traefik.http.routers.komodo.tls.certresolver=mydnschallenge"
       - "traefik.http.services.komodo.loadbalancer.server.port=9120"
     volumes:
-      - ${COMPOSE_COMODO_BACKUPS_PATH}:/backups
+      - ${COMPOSE_COMODO_BACKUPS_PATH:-/etc/komodo/backups}:/backups
       - ./config/core.config.toml:/config/config.toml
     networks:
       - proxy-tier
