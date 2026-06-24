@@ -5,8 +5,9 @@ networking/coredns/Corefile
 homepage/config/logs/
 utilities/stirling-pdf/stirling-data/
 utilities/metube/downloads/
-*.log
-monitoring/komodo/config/core.config.toml
+ci_cd/komodo/config/core.config.toml
+monitoring/grafana/grafana-data/
+
 
 # --- OS / IDE specific ---
 .DS_Store
@@ -18,3 +19,7 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
+*.log
+
+# -- Generated files
+budget*.txt

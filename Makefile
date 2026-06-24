@@ -23,3 +23,7 @@ all-up: ## Start both networking and ci_cd services
 all-down: ## Stop both networking and ci_cd services
 	make networking ARGS="down"
 	make ci_cd ARGS="down"
+
+.PHONE: budget
+budget: ## Calculate your monthly budget with 50-30-20 rule. Usage: ARGS="--help", ARGS="-o"
+	./ci_cd/finances_budgeting.sh ${ARGS}
