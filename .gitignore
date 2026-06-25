@@ -2,11 +2,12 @@
 networking/tailscale/tailscale-data/
 networking/traefik/letsencrypt/acme.json
 networking/coredns/Corefile
+ci_cd/komodo/config/core.config.toml
 homepage/config/logs/
+monitoring/grafana/grafana-data/
+monitoring/prometheus/prometheus-data/
 utilities/stirling-pdf/stirling-data/
 utilities/metube/downloads/
-ci_cd/komodo/config/core.config.toml
-monitoring/grafana/grafana-data/
 
 
 # --- OS / IDE specific ---
