@@ -16,6 +16,7 @@ services:
       - "--global.checkNewVersion=true"
       - "--providers.docker=true"
       - "--providers.docker.exposedByDefault=false"
+      - "--providers.docker.network=proxy-tier"
       # Entrypoints
       - "--entrypoints.web.address=:80"
       - "--entrypoints.websecure.address=:443"
