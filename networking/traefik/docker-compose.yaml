@@ -9,7 +9,6 @@ services:
       - "--api=true"
       - "--api.dashboard=true"
       - "--api.insecure=false"
-      - "--pilot.dashboard=false"
       - "--global.sendAnonymousUsage=false"
       - "--global.checkNewVersion=true"
       - "--providers.docker=true"
