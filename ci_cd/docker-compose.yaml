@@ -1,4 +1,4 @@
-name: monitoring
+name: ci_cd
 include:
   - path: ./komodo/docker-compose.yaml
   # - path: ./dozzle/docker-compose.yaml
