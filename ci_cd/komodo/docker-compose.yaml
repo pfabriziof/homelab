@@ -33,7 +33,8 @@ services:
       - proxy-tier
 
   core:
-    image: ghcr.io/moghtech/komodo-core:latest
+    image: ghcr.io/moghtech/komodo-core:2
+    init: true
     container_name: komodo-core
     restart: unless-stopped
     depends_on:
@@ -53,14 +54,15 @@ services:
       - "traefik.http.routers.komodo.tls.certresolver=mydnschallenge"
       - "traefik.http.services.komodo.loadbalancer.server.port=9120"
     volumes:
-      - ${COMPOSE_KOMODO_BACKUPS_PATH:-/etc/komodo/backups}:/backups
       - ./config/core.config.toml:/config/config.toml
-      - /etc/komodo/keys:/config/keys
+      - ${KOMODO_ROOT_PATH}/backups:/backups
+      - ${KOMODO_ROOT_PATH}/keys:/config/keys
     networks:
       - proxy-tier
 
   periphery:
-    image: ghcr.io/moghtech/komodo-periphery:latest
+    image: ghcr.io/moghtech/komodo-periphery:2
+    init: true
     container_name: komodo-periphery
     restart: unless-stopped
     environment:
@@ -72,8 +74,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /proc:/proc
-      - ${PERIPHERY_ROOT_DIRECTORY:-/etc/komodo}:/etc/komodo
-      - /etc/komodo/keys:/config/keys
+      - ${KOMODO_ROOT_PATH}:/etc/komodo
+      - ${KOMODO_ROOT_PATH}/keys:/config/keys
     networks:
       - proxy-tier
 
