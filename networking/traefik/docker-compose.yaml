@@ -1,3 +1,6 @@
+networks:
+  proxy-tier:
+    external: true
 services:
   traefik:
     image: traefik:v3.7.5
@@ -56,6 +59,4 @@ services:
       - "traefik.http.services.whoami.loadbalancer.server.port=80"
     networks:
       - proxy-tier
-networks:
-  proxy-tier:
-    external: true
+
